@@ -1,16 +1,13 @@
 import { Card } from "@/components/ui/card"
-import background from "../assets/Pages.svg"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import BackgroundLayout from "@/layouts/BackgroundLayout"
 
 export function RecoverPass() {
   return (
-    <div
-      className="flex h-screen w-screen flex-col content-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url('${background}')` }}
-    >
+    <BackgroundLayout>
       <h1 className="title mb-2 self-center">Recuperar Senha</h1>
       <Card className="w-125 self-center border-2 border-gray-900 p-6">
         <div className="flex flex-col items-center gap-4">
@@ -46,6 +43,6 @@ export function RecoverPass() {
           </p>
         </div>
       </Card>
-    </div>
+    </BackgroundLayout>
   )
 }

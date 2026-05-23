@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card"
-import background from "../assets/Pages.svg"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { useEffect, useState } from "react"
@@ -12,6 +11,7 @@ import {
 } from "@/components/ui/select"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
+import BackgroundLayout from "@/layouts/BackgroundLayout"
 
 export function PhoneInput() {
   const [ddd, setDdd] = useState("")
@@ -134,10 +134,7 @@ export function LocationSelect() {
 
 export function Register() {
   return (
-    <div
-      className="flex h-screen w-screen flex-col content-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url('${background}')` }}
-    >
+    <BackgroundLayout>
       <h1 className="title mb-2 self-center">Cadastro</h1>
       <Card className="w-2xl self-center border-2 border-gray-900 p-6">
         <div className="flex items-center gap-4">
@@ -201,6 +198,6 @@ export function Register() {
           </Link>
         </div>
       </Card>
-    </div>
+    </BackgroundLayout>
   )
 }

@@ -4,14 +4,13 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 
 import { Link } from "react-router-dom"
-import  background  from "../assets/Pages.svg"
+
+import BackgroundLayout from "@/layouts/BackgroundLayout"
 
 export function Login() {
   return (
-    <div
-      className="flex h-screen w-screen flex-col content-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url('${background}')` }}
-    >
+    <BackgroundLayout>
+
       <h1 className="title mb-2 self-center">Login</h1>
       <Card className="w-125 self-center border-2 border-gray-900 p-6">
         {/* Email */}
@@ -59,7 +58,8 @@ export function Login() {
             </Link>
           </p>
         </div>
-      </Card>
-    </div>
+        </Card>
+
+    </BackgroundLayout>
   )
 }

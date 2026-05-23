@@ -1,20 +1,19 @@
 import { Card } from "@/components/ui/card"
-import background from "../assets/Pages.svg"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import BackgroundLayout from "@/layouts/BackgroundLayout"
 
 export function ChangingPass() {
   return (
-    <div
-      className="flex h-screen w-screen flex-col content-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url('${background}')` }}
-    >
+    <BackgroundLayout>
       <h1 className="title mb-2 self-center">Redefinir Senha</h1>
       <Card className="w-125 self-center border-2 border-gray-900 p-6">
         <div className="flex items-center gap-4">
-          <Label className="w-24 text-xl font-semibold text-white">Nova Senha</Label>
+          <Label className="w-24 text-xl font-semibold text-white">
+            Nova Senha
+          </Label>
           <Input
             type="password"
             placeholder="email_exemplo@gmail.com"
@@ -54,6 +53,6 @@ export function ChangingPass() {
           </p>
         </div>
       </Card>
-    </div>
+    </BackgroundLayout>
   )
 }
