@@ -29,7 +29,7 @@ export function PhoneInput() {
           const value = e.target.value.replace(/\D/g, "")
           setDdd(value)
         }}
-        className="mr-1 w-16 border-gray-900 bg-gray-200 text-center"
+        className="mr-1 w-16 border-gray-900 bg-white text-center"
       />
 
       {/* Número */}
@@ -46,7 +46,7 @@ export function PhoneInput() {
 
           setPhone(value)
         }}
-        className="w-40 border-gray-900 bg-gray-200"
+        className="w-40 border-gray-900 bg-white"
       />
     </div>
   )
@@ -95,7 +95,7 @@ export function LocationSelect() {
             setSelectedCidade("") // reseta cidade ao trocar UF
           }}
         >
-          <SelectTrigger className="w-48 border-gray-900 bg-gray-200">
+          <SelectTrigger className="w-48 border-gray-900 bg-white">
             <SelectValue placeholder="Selecione o Estado" />
           </SelectTrigger>
 
@@ -115,7 +115,7 @@ export function LocationSelect() {
           disabled={!selectedUf}
           onValueChange={(value) => setSelectedCidade(value as string)}
         >
-          <SelectTrigger className="border-gray-900 bg-gray-200">
+          <SelectTrigger className="border-gray-900 bg-white">
             <SelectValue placeholder="Selecione a cidade" />
           </SelectTrigger>
 
@@ -142,7 +142,7 @@ export function Register() {
           <Input
             type="text"
             placeholder="Seu nome"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -152,7 +152,7 @@ export function Register() {
           <Input
             type="email"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 
@@ -165,7 +165,7 @@ export function Register() {
           <Input
             type="password"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -175,7 +175,7 @@ export function Register() {
           <Input
             type="password"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 

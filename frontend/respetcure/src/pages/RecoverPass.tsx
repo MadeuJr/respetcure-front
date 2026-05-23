@@ -17,7 +17,7 @@ export function RecoverPass() {
           <Input
             type="email"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 

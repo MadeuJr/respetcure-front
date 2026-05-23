@@ -10,7 +10,6 @@ import BackgroundLayout from "@/layouts/BackgroundLayout"
 export function Login() {
   return (
     <BackgroundLayout>
-
       <h1 className="title mb-2 self-center">Login</h1>
       <Card className="w-125 self-center border-2 border-gray-900 p-6">
         {/* Email */}
@@ -21,7 +20,7 @@ export function Login() {
           <Input
             type="email"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 
@@ -31,7 +30,7 @@ export function Login() {
           <Input
             type="password"
             placeholder="Insira uma senha..."
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 
@@ -58,8 +57,7 @@ export function Login() {
             </Link>
           </p>
         </div>
-        </Card>
-
+      </Card>
     </BackgroundLayout>
   )
 }

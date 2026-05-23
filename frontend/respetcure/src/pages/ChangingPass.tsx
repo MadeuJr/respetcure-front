@@ -17,7 +17,7 @@ export function ChangingPass() {
           <Input
             type="password"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -27,7 +27,7 @@ export function ChangingPass() {
           <Input
             type="password"
             placeholder="email_exemplo@gmail.com"
-            className="border-gray-900 bg-gray-200"
+            className="border-gray-900 bg-white"
           />
         </div>
 
