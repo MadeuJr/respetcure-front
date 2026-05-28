@@ -84,6 +84,26 @@ const MOCK_USER_PETS: Pet[] = [
     status: "lost",
     contact: "(11) 99999-0000",
   },
+  {
+    id: "102",
+    name: "Toby",
+    age: "5 anos",
+    breed: "Beagle",
+    image: "https://placedog.net/400/400?id=11",
+    description: "Sumiu no parque, procuro desesperadamente!",
+    status: "lost",
+    contact: "(11) 99999-0000",
+  },
+  {
+    id: "102",
+    name: "Toby",
+    age: "5 anos",
+    breed: "Beagle",
+    image: "https://placedog.net/400/400?id=11",
+    description: "Sumiu no parque, procuro desesperadamente!",
+    status: "lost",
+    contact: "(11) 99999-0000",
+  },
 ]
 
 function PetItem({ pet }: { pet: Pet }) {
@@ -129,7 +149,7 @@ function PetItem({ pet }: { pet: Pet }) {
           />
           <p className="text-lg text-gray-700">{pet.description}</p>
           <Button
-            className="bg-primary text-white hover:bg-orange-600"
+            className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600"
             onClick={() => alert(`Navegando para edição do pet ${pet.id}...`)}
           >
             Editar Pet
@@ -147,10 +167,10 @@ export default function Profile() {
   const [isEditing, setIsEditing] = useState(false)
   const [name, setName] = useState(MOCK_USER.name)
   const [email, setEmail] = useState(MOCK_USER.email)
-  // Parse phone from MOCK_USER.phone format "(11) 99999-0000"
+
   const [ddd, setDdd] = useState(MOCK_USER.phone?.slice(1, 3) ?? "")
   const [phone, setPhone] = useState(MOCK_USER.phone?.slice(4) ?? "")
-  // Parse location from MOCK_USER.location format "São Paulo, SP"
+
   const [selectedUf, setSelectedUf] = useState(MOCK_USER.location?.split(', ')[1] ?? "")
   const [selectedCidade, setSelectedCidade] = useState(MOCK_USER.location?.split(', ')[0] ?? "")
 
@@ -220,7 +240,9 @@ export default function Profile() {
                   setName(e.target.value)
                 }}
                 readOnly={!isEditing}
-                className="border-gray-900 bg-white/50"
+                className={`border-gray-900 bg-white ${
+                  isEditing ? "opacity-100" : "opacity-50"
+                }`}
               />
             </div>
             <div className="flex items-center gap-4">
@@ -233,7 +255,9 @@ export default function Profile() {
                   setEmail(e.target.value)
                 }}
                 readOnly={!isEditing}
-                className="border-gray-900 bg-white/50"
+                className={`border-gray-900 bg-white ${
+                  isEditing ? "opacity-100" : "opacity-50"
+                }`}
               />
             </div>
             <div className="flex items-center gap-4">
@@ -260,7 +284,7 @@ export default function Profile() {
           </div>
           {!isEditing ? (
             <Button
-              className="mt-4 bg-primary text-white hover:bg-orange-600"
+              className="mt-4 border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600"
               onClick={() => setIsEditing(true)}
             >
               Editar Perfil
@@ -268,13 +292,13 @@ export default function Profile() {
           ) : (
             <div className="mt-4 flex justify-end gap-2">
               <Button
-                className="bg-primary text-white hover:bg-orange-600"
+                className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600"
                 onClick={handleSave}
               >
                 Salvar
               </Button>
               <Button
-                className="border-2 border-gray-900 text-gray-900 hover:bg-orange-50"
+                className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-400"
                 onClick={handleCancel}
               >
                 Cancelar
@@ -290,7 +314,7 @@ export default function Profile() {
             {" "}
             <span className="subtitle">Meus Pets para Adoção </span> 🐾
           </h2>
-          <Button className="bg-primary p-4 text-white hover:bg-orange-600">
+          <Button className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600">
             + Adicionar Pet
           </Button>
         </div>
@@ -313,12 +337,12 @@ export default function Profile() {
             {" "}
             <span className="subtitle">Meus Pets Achados e Perdidos </span> 🔍
           </h2>
-          <Button className="bg-primary p-4 text-white hover:bg-orange-600">
+          <Button className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600">
             + Adicionar Pet
           </Button>
         </div>
-        <Card className="relative border-2 border-gray-900 p-6 shadow-2xl backdrop-blur-md">
-          <CardContent className="flex flex-wrap justify-center gap-4">
+        <Card className="relative max-w-4xl border-2 border-gray-900 p-6 shadow-2xl backdrop-blur-md">
+          <CardContent className="flex w-full flex-wrap justify-center gap-4">
             {MOCK_USER_PETS.filter((p) => p.status !== "adoption").map(
               (pet) => (
                 <div key={pet.id} className="w-fit">

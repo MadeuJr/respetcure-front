@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button";
 
 interface Pet {
   id: string
@@ -241,6 +242,12 @@ function PetCard({ pet }: { pet: Pet }) {
             <p className="text-orange-600">{pet.contact || "Não informado"}</p>
           </div>
         </div>
+        <Button
+          className="border-2 border-gray-900 bg-primary px-10 py-2 text-lg hover:bg-orange-600"
+          onClick={() => alert(`Navegando para edição do pet ${pet.id}...`)}
+        >
+          Ver anuncio completo
+        </Button>
       </DialogContent>
     </Dialog>
   )

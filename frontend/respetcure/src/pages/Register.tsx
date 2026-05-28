@@ -34,7 +34,7 @@ export function PhoneInput({ ddd, setDdd, phone, setPhone, error, readOnly = fal
               const value = e.target.value.replace(/\D/g, "")
               setDdd(value)
             }}
-            className={`mr-1 w-16 border-gray-900 bg-white text-center ${error ? "border-red-500" : ""}`}
+            className={`mr-1 w-16 border-gray-900 bg-white text-center ${readOnly ? "opacity-50" : "opacity-100"} ${error ? "border-red-500" : ""}`}
             readOnly={readOnly}
           />
           <Input
@@ -47,12 +47,12 @@ export function PhoneInput({ ddd, setDdd, phone, setPhone, error, readOnly = fal
               }
               setPhone(value)
             }}
-            className={`w-40 border-gray-900 bg-white ${error ? "border-red-500" : ""}`}
+            className={`w-40 border-gray-900 bg-white ${readOnly ? "opacity-50" : "opacity-100"} ${error ? "border-red-500" : ""}`}
             readOnly={readOnly}
           />
         </div>
       </div>
-      {error && <span className="text-sm text-red-500 ml-24">{error}</span>}
+      {error && <span className="ml-24 text-sm text-red-500">{error}</span>}
     </div>
   )
 }
